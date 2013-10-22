@@ -9,9 +9,11 @@ var teamspeak = new (require("node-teamspeak"))(config.host);
 teamspeak.send("login", {client_login_name: config.loginName, client_login_password: config.loginPassword}, function(err, response) {
     teamspeak.send("use", {sid: config.serverId}, function(err, response) {
         teamspeak.send("clientupdate", {client_nickname: config.clientName}, function(err, response) {
+            //Add module-dir to the module-paths
+            module.paths.push("modules");
             //Execute modules
             for (module in config.modules) {
-                require("./modules/" + module)(teamspeak, config.modules[module]);
+                require(module)(teamspeak, config.modules[module]);
             }
         });
     });
