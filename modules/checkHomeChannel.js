@@ -6,21 +6,23 @@ module.exports = function(teamspeak, config) {
     var maxHomeChannelTimes = config.maxSeconds / 2;
     (function checkHomeChannel() {
         teamspeak.send("clientlist", function(err, response) {
+            var newHomeChannelTimes = {};
             for (i in response) {
                 var client = response[i];
                 if (client.client_type === 0) {
                     if (client.cid === config.homeChannelId) {
-                        homeChannelTimes[client.client_database_id] = homeChannelTimes[client.client_database_id] ? homeChannelTimes[client.client_database_id] + 1 : 1;
-                        if (homeChannelTimes[client.client_database_id] > maxHomeChannelTimes) {
-                            homeChannelTimes[client.client_database_id] = 0;
+                        var homeChannelTime = homeChannelTimes[client.client_database_id] ? homeChannelTimes[client.client_database_id] + 1 : 1;
+                        if (homeChannelTime > maxHomeChannelTimes) {
                             teamspeak.send("clientpoke", {clid: client.clid, msg: config.pokeMessage});
                             teamspeak.send("clientmove", {clid: client.clid, cid: config.destinationChannelId});
+                        } else {
+                            newHomeChannelTimes[client.client_database_id] = homeChannelTime;
                         }
-                    } else {
-                        homeChannelTimes[client.client_database_id] = 0;
                     }
                 }
             }
+            homeChannelTimes = newHomeChannelTimes;
+            console.log(homeChannelTimes);
             setTimeout(function() {
                 checkHomeChannel();
             }, 2000);
