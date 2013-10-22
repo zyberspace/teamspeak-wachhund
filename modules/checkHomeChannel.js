@@ -22,7 +22,6 @@ module.exports = function(teamspeak, config) {
                 }
             }
             homeChannelTimes = newHomeChannelTimes;
-            console.log(homeChannelTimes);
             setTimeout(function() {
                 checkHomeChannel();
             }, 2000);
