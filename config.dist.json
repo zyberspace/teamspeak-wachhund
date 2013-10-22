@@ -1,0 +1,15 @@
+{
+    "host": "127.0.0.1",
+    "loginName": "serveradmin",
+    "loginPassword": "password",
+    "serverId": "1",
+    "clientName": "Rufus, der Wachhund",
+    "modules": {
+        "checkHomeChannel": {
+            "homeChannelId": 1,
+            "destinationChannelId": 2,
+            "maxSeconds": 20,
+            "pokeMessage": "Please leave the home channel, if you are not afk."
+        }
+    }
+}
