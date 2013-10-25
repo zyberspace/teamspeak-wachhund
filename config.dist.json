@@ -10,6 +10,15 @@
             "destinationChannelId": 2,
             "maxSeconds": 20,
             "pokeMessage": "Please leave the home channel, if you are not afk."
+        },
+        "channelGroupViaServerGroup": {
+            "accessChannelGroupId": <The id of a ChannelGroup with enough joinPower>,
+            "resetChannelGroupId": <If a user gets removed from a serverGroup>,
+            "updateInterval": 500,
+            "channels": {
+                "<serverGroupId1>": [<channelGroupId1>, <channelGroupId2>],
+                "<serverGroupId2>": [<channelGroupId3>, <channelGroupId1>]
+            }
         }
     }
 }
