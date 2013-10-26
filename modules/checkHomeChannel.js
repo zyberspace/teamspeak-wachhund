@@ -6,6 +6,11 @@ module.exports = function(teamspeak, config) {
     var maxHomeChannelTimes = config.maxSeconds / 2;
     (function checkHomeChannel() {
         teamspeak.send("clientlist", function(err, response) {
+            if (!response) {
+                response = [];
+            } else if (!Array.isArray(response)) {
+                response = [response];
+            }
             var newHomeChannelTimes = {};
             for (i in response) {
                 var client = response[i];
