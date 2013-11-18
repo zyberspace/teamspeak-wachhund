@@ -12,7 +12,7 @@ Installation
 ------------
  1. Download the latest release from the [release-page](https://github.com/zyberspace/teamspeak-wachhund/releases).
  2. Edit the `config.json`-file, as your needs.
- 3. Run `./teamspeak-wachhund_startscript start` to start the bot and your are ready. :D
+ 3. Run `./teamspeak-wachhund_startscript.sh start` to start the bot and your are ready. :D
 
 ### From source
  1. Download the git-repository.
