@@ -1,6 +1,6 @@
 {
     "name": "teamspeak-wachhund",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "A module-based bot for teamspeak 3 servers",
     "homepage": "https://github.com/zyberspace/teamspeak-wachhund",
     "bugs": "https://github.com/zyberspace/teamspeak-wachhund/issues",
