@@ -19,6 +19,6 @@
         "url": "https://github.com/zyberspace/teamspeak-wachhund.git"
     },
     "dependencies": {
-        "node-teamspeak": "git://github.com/gwTumm/node-teamspeak.git"
+        "node-teamspeak": ">=1.0.4 <2.0.0"
     }
 }
