@@ -4,7 +4,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 var TeamspeakClient = require("node-teamspeak"),
-    config = require("./config");
+    config = JSON.parse(require("fs").readFileSync("config.json"));
 
 //Add module-dir to the module-paths
 module.paths.push("modules");
