@@ -87,7 +87,7 @@ case "$1" in
 	;;
 	status)
 		if [ -e wachhund.pid ]; then
-			if ( kill -0 $(cat tsdnsserver.pid) 2> /dev/null ); then
+			if ( kill -0 $(cat wachhund.pid) 2> /dev/null ); then
 				echo "Wachhund for Teamspeak 3 is running"
 			else
 				echo "Wachhund for Teamspeak 3 seems to have died"
